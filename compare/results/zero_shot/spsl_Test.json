@@ -1,0 +1,25 @@
+{
+ "model": "spsl",
+ "source": "DeepfakeBench v1.0.1 release, spsl_best.pth, trained on FF++ c23",
+ "split": "Test",
+ "images": 10905,
+ "input": "256x256",
+ "params_M": 21.86,
+ "missing_keys": 0,
+ "unexpected_keys": 0,
+ "metrics": {
+  "n": 10905,
+  "accuracy": 0.5245300320953691,
+  "auc": 0.5325330874433147,
+  "tp": 3047,
+  "tn": 2673,
+  "fp": 2740,
+  "fn": 2445
+ },
+ "mean_p_fake_on_real": 0.5336375135711434,
+ "mean_p_fake_on_fake": 0.561109587218511,
+ "latency_ms_b1_fp32": 3.31,
+ "throughput_img_s_b64_fp32": 432.8,
+ "eval_seconds": 26.1,
+ "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}

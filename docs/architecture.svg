@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920" width="1200" height="920" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+    <marker id="arc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#E11D48"/></marker>
+    <marker id="art" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0E7490"/></marker>
+  </defs>
+  <rect width="100%" height="100%" rx="18" fill="#ffffff"/>
+  <rect x="1" y="1" width="1198" height="918" rx="18" fill="none" stroke="#E5E7EB" stroke-width="2"/>
+
+  <text x="40" y="52" font-size="26" font-weight="700" fill="#0F172A">Detector: frames in, real/fake score out</text>
+  <text x="40" y="78" font-size="15" fill="#64748B">Per-frame CNN features, then a Mamba head that carries a recurrent state from frame to frame</text>
+
+  <!-- main row -->
+  <g font-size="14" fill="#ffffff" text-anchor="middle">
+    <rect x="40" y="110" width="150" height="140" rx="12" fill="#334155"/>
+    <text x="115" y="140" font-size="16" font-weight="700">Input</text>
+    <text x="115" y="166">face crops from</text><text x="115" y="186">video frames or</text><text x="115" y="206">still images</text><text x="115" y="230" font-weight="700">256 x 256</text>
+
+    <rect x="210" y="110" width="190" height="140" rx="12" fill="#0E7490"/>
+    <text x="305" y="140" font-size="16" font-weight="700">EfficientNet-B0</text>
+    <text x="305" y="166">trunk, per frame</text><text x="305" y="186">fine-tuned in v2</text><text x="305" y="206">4,007,548 params</text><text x="305" y="230" font-weight="700">1,280-d feature</text>
+
+    <rect x="420" y="110" width="150" height="140" rx="12" fill="#14B8A6"/>
+    <text x="495" y="140" font-size="16" font-weight="700">Projection</text>
+    <text x="495" y="170">Linear layer</text><text x="495" y="200" font-weight="700">1,280 to 512</text><text x="495" y="226">d_model 512</text>
+
+    <rect x="590" y="110" width="210" height="140" rx="12" fill="#F97316"/>
+    <text x="695" y="140" font-size="16" font-weight="700">4 x Mamba layer</text>
+    <text x="695" y="166">d_model 512, d_state 16</text><text x="695" y="186">1,024 inner channels</text><text x="695" y="210" font-weight="700">state carried across</text><text x="695" y="230" font-weight="700">frames</text>
+
+    <rect x="820" y="110" width="190" height="140" rx="12" fill="#E11D48"/>
+    <text x="915" y="140" font-size="16" font-weight="700">Pool + classifier</text>
+    <text x="915" y="166">LayerNorm, mean</text><text x="915" y="186">over frames, then</text><text x="915" y="206">MLP 512, 256, 2</text>
+
+    <rect x="1030" y="110" width="130" height="140" rx="12" fill="#334155"/>
+    <text x="1095" y="140" font-size="16" font-weight="700">Output</text>
+    <text x="1095" y="176">real / fake</text><text x="1095" y="196">score</text>
+  </g>
+  <g stroke="#334155" stroke-width="2.5" marker-end="url(#ar)">
+    <line x1="190" y1="180" x2="208" y2="180"/><line x1="400" y1="180" x2="418" y2="180"/><line x1="570" y1="180" x2="588" y2="180"/>
+    <line x1="800" y1="180" x2="818" y2="180"/><line x1="1010" y1="180" x2="1028" y2="180"/>
+  </g>
+  <!-- brackets -->
+  <path d="M210,262 L210,272 L400,272 L400,262" fill="none" stroke="#0E7490" stroke-width="2"/>
+  <text x="305" y="294" font-size="14" fill="#334155" text-anchor="middle">CNN trunk (fine-tuned in v2)</text>
+  <path d="M420,262 L420,272 L1010,272 L1010,262" fill="none" stroke="#F97316" stroke-width="2"/>
+  <text x="715" y="294" font-size="14" fill="#334155" text-anchor="middle">Mamba head: 11,503,874 trained parameters (the part DiLoCo synchronizes)</text>
+
+  <!-- memory cards -->
+  <g font-size="14">
+    <rect x="40" y="318" width="360" height="96" rx="12" fill="#CCFBF1" stroke="#14B8A6"/>
+    <text x="56" y="344" font-weight="700" fill="#0E7490" font-size="15">In storage: cached features</text>
+    <text x="56" y="366" fill="#334155">Trunk output saved once (dfmamba/extract.py)</text>
+    <text x="56" y="386" fill="#334155">in half precision: 30 x 1,280 = 77 KB per clip.</text>
+    <text x="56" y="404" fill="#334155">Head training never re-runs the CNN.</text>
+
+    <rect x="420" y="318" width="360" height="96" rx="12" fill="#FFEDD5" stroke="#F97316"/>
+    <text x="436" y="344" font-weight="700" fill="#C2410C" font-size="15">In the model: recurrent state</text>
+    <text x="436" y="366" fill="#334155">1,024 channels x 16 numbers per layer,</text>
+    <text x="436" y="386" fill="#334155">fixed size for a clip of 30 or 3,000 frames.</text>
+    <text x="436" y="404" fill="#334155">Training uses the reference scan (ssm.py).</text>
+
+    <rect x="800" y="318" width="360" height="96" rx="12" fill="#FFE4E6" stroke="#E11D48"/>
+    <text x="816" y="344" font-weight="700" fill="#BE123C" font-size="15">On the GPU: fused Triton scan</text>
+    <text x="816" y="366" fill="#334155">Inference only (triton_scan.py): the state</text>
+    <text x="816" y="386" fill="#334155">stays in registers; the frames x 1,024 x 16</text>
+    <text x="816" y="404" fill="#334155">intermediate never reaches GPU memory.</text>
+  </g>
+
+  <!-- results strip -->
+  <rect x="40" y="430" width="1120" height="58" rx="12" fill="#FEF9C3" stroke="#FACC15"/>
+  <text x="56" y="454" font-size="14" fill="#334155" font-weight="700">Test split, 10,905 still images (no video evaluation yet)</text>
+  <text x="56" y="475" font-size="14" fill="#334155">v2 fine-tuned trunk with a linear head: <tspan font-weight="700">89.62%, AUC 0.958</tspan>.     v2 features + this Mamba head: <tspan font-weight="700">89.2%, AUC 0.936</tspan>.</text>
+
+  <!-- DiLoCo panel -->
+  <rect x="40" y="508" width="1120" height="392" rx="16" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1.5"/>
+  <text x="60" y="542" font-size="22" font-weight="700" fill="#0E7490">DiLoCo: training the head on 4 GPUs linked by the internet</text>
+
+  <g font-size="14" text-anchor="middle" fill="#ffffff">
+    <rect x="60" y="560" width="250" height="78" rx="10" fill="#0E7490"/>
+    <text x="185" y="584" font-weight="700" font-size="15">Rank 0: RTX 4060 Ti</text><text x="185" y="605">home PC behind a router (India)</text><text x="185" y="625">35,001 clips</text>
+    <rect x="330" y="560" width="250" height="78" rx="10" fill="#14B8A6"/>
+    <text x="455" y="584" font-weight="700" font-size="15">Rank 1: RTX 2060</text><text x="455" y="605">consumer GPU, remote site</text><text x="455" y="625">35,001 clips</text>
+    <rect x="600" y="560" width="250" height="78" rx="10" fill="#14B8A6"/>
+    <text x="725" y="584" font-weight="700" font-size="15">Rank 2: RTX 3070</text><text x="725" y="605">consumer GPU, remote site</text><text x="725" y="625">35,000 clips</text>
+    <rect x="870" y="560" width="250" height="78" rx="10" fill="#14B8A6"/>
+    <text x="995" y="584" font-weight="700" font-size="15">Rank 3: RTX 3060</text><text x="995" y="605">consumer GPU, remote site</text><text x="995" y="625">35,000 clips; also hosts the hub</text>
+  </g>
+
+  <!-- arrows: down = pseudo-gradient, up = averaged update -->
+  <g stroke-width="2.5">
+    <line x1="170" y1="640" x2="170" y2="688" stroke="#E11D48" marker-end="url(#arc)"/>
+    <line x1="200" y1="688" x2="200" y2="640" stroke="#0E7490" marker-end="url(#art)"/>
+    <line x1="440" y1="640" x2="440" y2="688" stroke="#E11D48" marker-end="url(#arc)"/>
+    <line x1="470" y1="688" x2="470" y2="640" stroke="#0E7490" marker-end="url(#art)"/>
+    <line x1="710" y1="640" x2="710" y2="688" stroke="#E11D48" marker-end="url(#arc)"/>
+    <line x1="740" y1="688" x2="740" y2="640" stroke="#0E7490" marker-end="url(#art)"/>
+    <line x1="980" y1="640" x2="980" y2="688" stroke="#E11D48" marker-end="url(#arc)"/>
+    <line x1="1010" y1="688" x2="1010" y2="640" stroke="#0E7490" marker-end="url(#art)"/>
+  </g>
+  <rect x="60" y="690" width="1060" height="44" rx="10" fill="#334155"/>
+  <text x="590" y="710" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Hub (dfmamba/hub.py): one TCP port; every worker connects out to it</text>
+  <text x="590" y="727" font-size="14" fill="#ffffff" text-anchor="middle">averages the updates, weighted by batch size, and sends the result back</text>
+
+  <!-- legend + notes -->
+  <line x1="60" y1="756" x2="90" y2="756" stroke="#E11D48" stroke-width="2.5" marker-end="url(#arc)"/>
+  <text x="98" y="761" font-size="14" fill="#334155">up to hub: bfloat16 pseudo-gradient, 23.0 MB per sync</text>
+  <line x1="480" y1="756" x2="510" y2="756" stroke="#0E7490" stroke-width="2.5" marker-end="url(#art)"/>
+  <text x="518" y="761" font-size="14" fill="#334155">back to workers: averaged update</text>
+
+  <g font-size="14" fill="#334155">
+    <text x="60" y="792" font-weight="700" fill="#0E7490">Each round, H = 100</text>
+    <text x="60" y="812">1. Every worker trains 100 inner AdamW steps alone, with no traffic.</text>
+    <text x="60" y="832">2. It sends master minus local (the pseudo-gradient) to the hub.</text>
+    <text x="60" y="852">3. Outer SGD with Nesterov momentum (lr 0.7, momentum 0.9) updates</text>
+    <text x="60" y="872">    the master copy; every worker restarts from it.</text>
+
+    <text x="720" y="792" font-weight="700" fill="#0E7490">Internet run, frozen earlier features (measured)</text>
+    <text x="720" y="812">30 syncs in 3,000 steps; 869 s wall-clock</text>
+    <text x="720" y="832"><tspan font-weight="700">690 MB</tspan> uploaded per worker; <tspan font-weight="700">70.5%</tspan> Test accuracy</text>
+    <text x="720" y="858" font-weight="700" fill="#BE123C">Projection, not measured</text>
+    <text x="720" y="878">Syncing every step: about <tspan font-weight="700">69 GB</tspan> per worker.</text>
+  </g>
+</svg>

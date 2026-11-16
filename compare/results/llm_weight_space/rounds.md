@@ -1,0 +1,22 @@
+# One-line rationale per OPRO round
+
+- Round 1: Opening probe: effort and univfd are the only detectors with AUC>0.7 on OPT, so test them alone, together, and with the all-detector mean.
+- Round 2: Round 1 best was effort 0.4 / univfd 0.25; effort weight looked favoured, so vary the ratio, and probe the weakest detectors with small signed weights (cnnaug and f3net have AUC<0.5, so try negative).
+- Round 3: Round 2: negative cnnaug (-0.1) and negative f3net (-0.1) each gave +0.002 AUC and positive efficientnetb4 hurt; combine the two negatives, and try negative efficientnetb4/xception/ucf (correlated cluster 0.5-0.6, so a difference may cancel shared noise).
+- Round 4: Round 3 best (cnn -0.1, f3net -0.1, spsl +0.1) at OPT 0.8310; push spsl up, add small ucf/xception/eff4 variants on top of it, and test an overall scale change.
+- Round 5: Round 4 #6 (eff4 -0.05, xception +0.05) was best on both OPT and HOLD; extend the correlated-cluster difference idea: eff4 vs xception, f3net vs xception, ucf vs xception, at larger magnitude.
+- Round 6: AUC has plateaued near 0.833 on OPT; now tune the bias b (threshold) of the Round 5 #0 vector for accuracy at the fixed 0.5 cutoff, and test the effort/univfd ratio inside that vector.
+- Round 7: Lower univfd (0.2) improved AUC at OPT and HOLD; continue down to 0.15/0.1 and rescale the small detectors to keep their relative share.
+- Round 8: Test the optional second tier on the current best vector (r7 #2): shift effort and univfd inside z; algebra says w_i*c_i is absorbed by b, so expect identical AUC and only an accuracy-threshold effect.
+- Round 9: Second tier confirmed redundant with b; go back to weights. Coordinate probes around r7 #2 (0.8342): spsl up/down, xception up, cnnaug stronger, ucf both signs, at a fixed bias 0.6.
+- Round 10: Stronger effort-weight sweep with all else fixed: effort 0.3, 0.35, 0.5, 0.6.
+- Round 11: Escape the local optimum with larger structured jumps: pair each correlated-cluster member (eff4, f3net, ucf, xception) with opposite signs at larger magnitude, other weights held.
+- Round 12: Extra weight on the spsl/cnnaug side channels (the two least correlated with effort), and scaled copies of the best vector (x1.5, x2) to check accuracy at threshold 0.
+- Round 13: Sparsity check: drop individual small weights from r7 #2 to see which ones are carrying the 0.833 to 0.834 gain.
+- Round 14: Fine ratio of effort:univfd between 0.4:0.15 and 0.4:0.22 with the xception/eff4 pair at 0.12.
+- Round 15: Joint small moves from r7 #2 along the direction that helped most so far (more negative cnnaug and f3net with matching spsl rise).
+- Round 16: Test whether ucf/xception/f3net/eff4 all-negative cluster (shared-noise suppression) plus positive spsl beats the paired version.
+- Round 17: Perturb effort and univfd jointly up (0.45/0.2) and down (0.35/0.16) with the side weights fixed.
+- Round 18: Mix the two best AUC directions (r15 #1 stronger cnn/f3 negatives, r6 #6 lower univfd) and nudge spsl.
+- Round 19: Check whether making cnnaug and f3net much more negative (-0.2/-0.25) with compensating spsl still pays.
+- Round 20: Final-check bias for accuracy at the 0.5 cutoff on the leading vector (r15 #1 shape) across b 0.5 to 0.8.

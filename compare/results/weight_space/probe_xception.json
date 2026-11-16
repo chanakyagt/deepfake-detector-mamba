@@ -1,0 +1,5466 @@
+{
+ "model": "xception",
+ "probe_images": 5,
+ "probe_indices": [
+  2941,
+  3356,
+  5572,
+  6944,
+  9272
+ ],
+ "input_resolution": 256,
+ "input_shape": [
+  5,
+  3,
+  256,
+  256
+ ],
+ "penultimate_feature_shape": [
+  5,
+  2048
+ ],
+ "penultimate_dim": 2048,
+ "head_W_shape": [
+  2,
+  2048
+ ],
+ "head_b_shape": [
+  2
+ ],
+ "n_batchnorm_layers": 41,
+ "total_params": 21861162,
+ "checkpoint_missing_keys": 0,
+ "checkpoint_unexpected_keys": 0,
+ "compact": [
+  {
+   "layers": "backbone.conv1",
+   "type": "Conv2d",
+   "input": [
+    [
+     5,
+     3,
+     256,
+     256
+    ]
+   ],
+   "output": [
+    5,
+    32,
+    127,
+    127
+   ],
+   "param_shapes": {
+    "weight": [
+     32,
+     3,
+     3,
+     3
+    ]
+   },
+   "params_each": 864
+  },
+  {
+   "layers": "backbone.bn1",
+   "type": "BatchNorm2d",
+   "input": [
+    [
+     5,
+     32,
+     127,
+     127
+    ]
+   ],
+   "output": [
+    5,
+    32,
+    127,
+    127
+   ],
+   "param_shapes": {
+    "weight": [
+     32
+    ],
+    "bias": [
+     32
+    ]
+   },
+   "params_each": 64
+  },
+  {
+   "layers": "backbone.relu",
+   "type": "ReLU",
+   "input": [
+    [
+     5,
+     32,
+     127,
+     127
+    ]
+   ],
+   "output": [
+    5,
+    32,
+    127,
+    127
+   ],
+   "param_shapes": {},
+   "params_each": 0
+  },
+  {
+   "layers": "backbone.conv2",
+   "type": "Conv2d",
+   "input": [
+    [
+     5,
+     32,
+     127,
+     127
+    ]
+   ],
+   "output": [
+    5,
+    64,
+    125,
+    125
+   ],
+   "param_shapes": {
+    "weight": [
+     64,
+     32,
+     3,
+     3
+    ]
+   },
+   "params_each": 18432
+  },
+  {
+   "layers": "backbone.bn2",
+   "type": "BatchNorm2d",
+   "input": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "output": [
+    5,
+    64,
+    125,
+    125
+   ],
+   "param_shapes": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "params_each": 128
+  },
+  {
+   "layers": "backbone.block1",
+   "type": "Block",
+   "input": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "output": [
+    5,
+    128,
+    63,
+    63
+   ],
+   "param_shapes": {},
+   "params_each": 35264
+  },
+  {
+   "layers": "backbone.block2",
+   "type": "Block",
+   "input": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "output": [
+    5,
+    256,
+    32,
+    32
+   ],
+   "param_shapes": {},
+   "params_each": 136064
+  },
+  {
+   "layers": "backbone.block3",
+   "type": "Block",
+   "input": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "output": [
+    5,
+    728,
+    16,
+    16
+   ],
+   "param_shapes": {},
+   "params_each": 915944
+  },
+  {
+   "layers": "backbone.block4 .. backbone.block11 (x8)",
+   "type": "Block",
+   "input": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "output": [
+    5,
+    728,
+    16,
+    16
+   ],
+   "param_shapes": {},
+   "params_each": 1613976
+  },
+  {
+   "layers": "backbone.block12",
+   "type": "Block",
+   "input": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "output": [
+    5,
+    1024,
+    8,
+    8
+   ],
+   "param_shapes": {},
+   "params_each": 2039584
+  },
+  {
+   "layers": "backbone.conv3",
+   "type": "SeparableConv2d",
+   "input": [
+    [
+     5,
+     1024,
+     8,
+     8
+    ]
+   ],
+   "output": [
+    5,
+    1536,
+    8,
+    8
+   ],
+   "param_shapes": {},
+   "params_each": 1582080
+  },
+  {
+   "layers": "backbone.bn3",
+   "type": "BatchNorm2d",
+   "input": [
+    [
+     5,
+     1536,
+     8,
+     8
+    ]
+   ],
+   "output": [
+    5,
+    1536,
+    8,
+    8
+   ],
+   "param_shapes": {
+    "weight": [
+     1536
+    ],
+    "bias": [
+     1536
+    ]
+   },
+   "params_each": 3072
+  },
+  {
+   "layers": "backbone.conv4",
+   "type": "SeparableConv2d",
+   "input": [
+    [
+     5,
+     1536,
+     8,
+     8
+    ]
+   ],
+   "output": [
+    5,
+    2048,
+    8,
+    8
+   ],
+   "param_shapes": {},
+   "params_each": 3159552
+  },
+  {
+   "layers": "backbone.bn4",
+   "type": "BatchNorm2d",
+   "input": [
+    [
+     5,
+     2048,
+     8,
+     8
+    ]
+   ],
+   "output": [
+    5,
+    2048,
+    8,
+    8
+   ],
+   "param_shapes": {
+    "weight": [
+     2048
+    ],
+    "bias": [
+     2048
+    ]
+   },
+   "params_each": 4096
+  },
+  {
+   "layers": "backbone.last_linear",
+   "type": "Linear",
+   "input": [
+    [
+     5,
+     2048
+    ]
+   ],
+   "output": [
+    5,
+    2
+   ],
+   "param_shapes": {
+    "weight": [
+     2,
+     2048
+    ],
+    "bias": [
+     2
+    ]
+   },
+   "params_each": 4098
+  }
+ ],
+ "layers_full": [
+  {
+   "name": "backbone",
+   "type": "Xception",
+   "called": false,
+   "params": {},
+   "n_params_total": 21861162
+  },
+  {
+   "name": "backbone.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     32,
+     3,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 864,
+   "in": [
+    [
+     5,
+     3,
+     256,
+     256
+    ]
+   ],
+   "out": [
+    5,
+    32,
+    127,
+    127
+   ]
+  },
+  {
+   "name": "backbone.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     32
+    ],
+    "bias": [
+     32
+    ]
+   },
+   "n_params_total": 64,
+   "in": [
+    [
+     5,
+     32,
+     127,
+     127
+    ]
+   ],
+   "out": [
+    5,
+    32,
+    127,
+    127
+   ]
+  },
+  {
+   "name": "backbone.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     32,
+     127,
+     127
+    ]
+   ],
+   "out": [
+    5,
+    32,
+    127,
+    127
+   ]
+  },
+  {
+   "name": "backbone.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     32,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 18432,
+   "in": [
+    [
+     5,
+     32,
+     127,
+     127
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "n_params_total": 128,
+   "in": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 35264,
+   "in": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block1.skip",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     64,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 8192,
+   "in": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block1.skipbn",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block1.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     128,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 26816,
+   "in": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.0",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 8768,
+   "in": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.0.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 576,
+   "in": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.0.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     64,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 8192,
+   "in": [
+    [
+     5,
+     64,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.3",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 17536,
+   "in": [
+    [
+     5,
+     128,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.3.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 1152,
+   "in": [
+    [
+     5,
+     128,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.3.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     128,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 16384,
+   "in": [
+    [
+     5,
+     128,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.4",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    125,
+    125
+   ]
+  },
+  {
+   "name": "backbone.block1.rep.5",
+   "type": "MaxPool2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     128,
+     125,
+     125
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 136064,
+   "in": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block2.skip",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     128,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 32768,
+   "in": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block2.skipbn",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block2.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 102784,
+   "in": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 33920,
+   "in": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 1152,
+   "in": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     128,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 32768,
+   "in": [
+    [
+     5,
+     128,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 67840,
+   "in": [
+    [
+     5,
+     256,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 2304,
+   "in": [
+    [
+     5,
+     256,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 65536,
+   "in": [
+    [
+     5,
+     256,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    63,
+    63
+   ]
+  },
+  {
+   "name": "backbone.block2.rep.6",
+   "type": "MaxPool2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     63,
+     63
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 915944,
+   "in": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block3.skip",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     256,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 186368,
+   "in": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block3.skipbn",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block3.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 728120,
+   "in": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 188672,
+   "in": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 2304,
+   "in": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     256,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 186368,
+   "in": [
+    [
+     5,
+     256,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.block3.rep.6",
+   "type": "MaxPool2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.7",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.7.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.7.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block4.rep.8",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.7",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.7.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.7.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block5.rep.8",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.7",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.7.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.7.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block6.rep.8",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.7",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.7.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.7.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block7.rep.8",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.7",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.7.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.7.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block8.rep.8",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.7",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.7.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.7.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block9.rep.8",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.7",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.7.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.7.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block10.rep.8",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1613976,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.7",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.7.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.7.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block11.rep.8",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12",
+   "type": "Block",
+   "called": true,
+   "params": {},
+   "n_params_total": 2039584,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.block12.skip",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 745472,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.block12.skipbn",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     1024,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.block12.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1292064,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.0",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.1",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 536536,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.1.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 529984,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728
+    ],
+    "bias": [
+     728
+    ]
+   },
+   "n_params_total": 1456,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 752024,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     728,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 6552,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    728,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     728,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 745472,
+   "in": [
+    [
+     5,
+     728,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.5",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     1024,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.block12.rep.6",
+   "type": "MaxPool2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     1024,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.conv3",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 1582080,
+   "in": [
+    [
+     5,
+     1024,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    1536,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.conv3.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 9216,
+   "in": [
+    [
+     5,
+     1024,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.conv3.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1536,
+     1024,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 1572864,
+   "in": [
+    [
+     5,
+     1024,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    1536,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.bn3",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1536
+    ],
+    "bias": [
+     1536
+    ]
+   },
+   "n_params_total": 3072,
+   "in": [
+    [
+     5,
+     1536,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    1536,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.conv4",
+   "type": "SeparableConv2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 3159552,
+   "in": [
+    [
+     5,
+     1536,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    2048,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.conv4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1536,
+     1,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 13824,
+   "in": [
+    [
+     5,
+     1536,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    1536,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.conv4.pointwise",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     2048,
+     1536,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 3145728,
+   "in": [
+    [
+     5,
+     1536,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    2048,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.bn4",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     2048
+    ],
+    "bias": [
+     2048
+    ]
+   },
+   "n_params_total": 4096,
+   "in": [
+    [
+     5,
+     2048,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    2048,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.last_linear",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     2,
+     2048
+    ],
+    "bias": [
+     2
+    ]
+   },
+   "n_params_total": 4098,
+   "in": [
+    [
+     5,
+     2048
+    ]
+   ],
+   "out": [
+    5,
+    2
+   ]
+  },
+  {
+   "name": "backbone.adjust_channel",
+   "type": "Sequential",
+   "called": false,
+   "params": {},
+   "n_params_total": 1050112
+  },
+  {
+   "name": "backbone.adjust_channel.0",
+   "type": "Conv2d",
+   "called": false,
+   "params": {
+    "weight": [
+     512,
+     2048,
+     1,
+     1
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1049088
+  },
+  {
+   "name": "backbone.adjust_channel.1",
+   "type": "BatchNorm2d",
+   "called": false,
+   "params": {
+    "weight": [
+     512
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1024
+  },
+  {
+   "name": "backbone.adjust_channel.2",
+   "type": "ReLU",
+   "called": false,
+   "params": {},
+   "n_params_total": 0
+  },
+  {
+   "name": "loss_func",
+   "type": "CrossEntropyLoss",
+   "called": false,
+   "params": {},
+   "n_params_total": 0
+  }
+ ]
+}

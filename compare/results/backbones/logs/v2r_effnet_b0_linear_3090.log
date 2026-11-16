@@ -1,0 +1,22 @@
+Downloading: "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth" to /root/.cache/torch/hub/checkpoints/efficientnet_b0_rwightman-7f5810bc.pth
+  0%|          | 0.00/20.5M [00:00<?, ?B/s]  6%|▌         | 1.12M/20.5M [00:00<00:01, 11.1MB/s] 11%|█         | 2.25M/20.5M [00:00<00:04, 4.49MB/s] 15%|█▍        | 3.00M/20.5M [00:00<00:03, 5.21MB/s] 18%|█▊        | 3.75M/20.5M [00:00<00:04, 4.37MB/s] 22%|██▏       | 4.50M/20.5M [00:00<00:03, 4.96MB/s] 25%|██▌       | 5.12M/20.5M [00:01<00:04, 3.33MB/s] 31%|███       | 6.25M/20.5M [00:01<00:03, 4.62MB/s] 34%|███▎      | 6.88M/20.5M [00:01<00:04, 3.39MB/s] 39%|███▉      | 8.00M/20.5M [00:01<00:02, 4.49MB/s] 42%|████▏     | 8.62M/20.5M [00:02<00:05, 2.09MB/s] 45%|████▌     | 9.25M/20.5M [00:02<00:04, 2.48MB/s] 50%|████▉     | 10.1M/20.5M [00:03<00:04, 2.68MB/s] 52%|█████▏    | 10.6M/20.5M [00:03<00:03, 2.90MB/s] 57%|█████▋    | 11.8M/20.5M [00:03<00:02, 4.07MB/s] 61%|██████    | 12.4M/20.5M [00:03<00:02, 3.26MB/s] 66%|██████▌   | 13.5M/20.5M [00:04<00:02, 3.48MB/s] 73%|███████▎  | 15.0M/20.5M [00:04<00:01, 5.09MB/s] 77%|███████▋  | 15.8M/20.5M [00:04<00:01, 3.79MB/s] 82%|████████▏ | 16.8M/20.5M [00:05<00:01, 2.48MB/s] 84%|████████▍ | 17.2M/20.5M [00:05<00:01, 1.94MB/s] 90%|████████▉ | 18.4M/20.5M [00:06<00:00, 2.41MB/s] 94%|█████████▍| 19.2M/20.5M [00:06<00:00, 2.82MB/s]100%|██████████| 20.5M/20.5M [00:06<00:00, 3.39MB/s]
+{"backbone": "effnet_b0", "head": "linear", "params": 4010110, "steps": 4375, "batch": 64, "size": 256, "aug": "strong", "label_smoothing": 0.1, "epochs": 2.0, "train_images_seen": 280000, "train_images_available": 140002, "gpu": "NVIDIA GeForce RTX 3090"}
+{"step": 250, "train_loss": 0.3853, "elapsed_s": 39.3}
+{"step": 500, "train_loss": 0.2664, "elapsed_s": 61.7}
+{"step": 750, "train_loss": 0.2509, "elapsed_s": 83.9}
+{"step": 1000, "train_loss": 0.248, "elapsed_s": 107.0, "val": {"n": 6000, "accuracy": 0.9736666666666667, "auc": 0.9956248888888889, "tp": 2907, "tn": 2935, "fp": 65, "fn": 93}}
+{"step": 1250, "train_loss": 0.2422, "elapsed_s": 131.9}
+{"step": 1500, "train_loss": 0.2381, "elapsed_s": 154.5}
+{"step": 1750, "train_loss": 0.2326, "elapsed_s": 177.4}
+{"step": 2000, "train_loss": 0.2354, "elapsed_s": 200.1, "val": {"n": 6000, "accuracy": 0.9788333333333333, "auc": 0.9972433888888889, "tp": 2932, "tn": 2941, "fp": 59, "fn": 68}}
+{"step": 2250, "train_loss": 0.23, "elapsed_s": 227.2}
+{"step": 2500, "train_loss": 0.2257, "elapsed_s": 250.4}
+{"step": 2750, "train_loss": 0.2231, "elapsed_s": 273.3}
+{"step": 3000, "train_loss": 0.2225, "elapsed_s": 296.3, "val": {"n": 6000, "accuracy": 0.9828333333333333, "auc": 0.9974529444444444, "tp": 2936, "tn": 2961, "fp": 39, "fn": 64}}
+{"step": 3250, "train_loss": 0.2199, "elapsed_s": 321.6}
+{"step": 3500, "train_loss": 0.2209, "elapsed_s": 344.2}
+{"step": 3750, "train_loss": 0.2215, "elapsed_s": 366.4}
+{"step": 4000, "train_loss": 0.2195, "elapsed_s": 388.5, "val": {"n": 6000, "accuracy": 0.9825, "auc": 0.9971314444444445, "tp": 2941, "tn": 2954, "fp": 46, "fn": 59}}
+{"step": 4250, "train_loss": 0.2205, "elapsed_s": 413.0}
+{"step": 4375, "train_loss": 0.2176, "elapsed_s": 424.9, "val": {"n": 6000, "accuracy": 0.9823333333333333, "auc": 0.9973843333333333, "tp": 2941, "tn": 2953, "fp": 47, "fn": 59}}
+{"train_seconds": 427.9, "test": {"n": 10905, "accuracy": 0.8961944062356717, "auc": 0.9583109583911517, "tp": 5344, "tn": 4429, "fp": 984, "fn": 148}, "test_tuned_threshold": {"n": 10905, "accuracy": 0.8929848693259973, "auc": 0.9583109583911517, "tp": 5376, "tn": 4362, "fp": 1051, "fn": 116, "threshold_from_validation": 0.42, "val_accuracy_at_threshold": 0.9849599269554631}, "val_full": {"n": 39428, "accuracy": 0.9845287612863954, "auc": 0.998164815809732, "tp": 19250, "tn": 19568, "fp": 219, "fn": 391}}

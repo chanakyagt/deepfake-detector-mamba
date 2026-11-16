@@ -1,0 +1,39 @@
+{
+ "target": "dfb_effnetb4",
+ "split": "Test",
+ "n": 10905,
+ "time": "2026-11-11 10:54:30",
+ "original_weights": {
+  "n": 10905,
+  "accuracy": 0.5033470884915177,
+  "auc": 0.49801139968264474,
+  "tp": 1647,
+  "tn": 3842,
+  "fp": 1571,
+  "fn": 3845,
+  "mean_p_fake_on_real": 0.35445040464401245,
+  "mean_p_fake_on_fake": 0.35964274406433105
+ },
+ "edited_weights": {
+  "n": 10905,
+  "accuracy": 0.5370013755158184,
+  "auc": 0.5524743916516158,
+  "tp": 1884,
+  "tn": 3972,
+  "fp": 1441,
+  "fn": 3608,
+  "mean_p_fake_on_real": 0.2887903153896332,
+  "mean_p_fake_on_fake": 0.36344113945961
+ },
+ "forward_passes_used": 27,
+ "val_checks_used": 3,
+ "edits": 193,
+ "totals": {
+  "changed_params": 1,
+  "total_params": 17552202,
+  "pct_params": 5.697290858434742e-06,
+  "changed_buffer_values": 125176,
+  "total_buffer_values": 125200
+ },
+ "note": "single read of Test; original and edited weights scored in the same pass over the data"
+}

@@ -1,0 +1,87 @@
+[
+ {
+  "rank": 2,
+  "world": 4,
+  "host": "<host>",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "mode": "diloco",
+  "inner_steps": 500,
+  "batch_size": 64,
+  "train_clips_this_worker": 35000,
+  "trainable_params": 11503874,
+  "payload_MB": 23.007748
+ },
+ {
+  "step": 500,
+  "rank": 2,
+  "train_loss": 0.45806954395771027,
+  "syncs": 1,
+  "payload_MB_sent": 23.01,
+  "wire_MB_est": 34.51,
+  "wait_s": 0.007,
+  "comm_s": 0.065,
+  "segment_s": 22.25,
+  "elapsed_s": 22.25
+ },
+ {
+  "step": 1000,
+  "rank": 2,
+  "train_loss": 0.39790142875909806,
+  "syncs": 2,
+  "payload_MB_sent": 46.02,
+  "wire_MB_est": 69.02,
+  "wait_s": 0.159,
+  "comm_s": 0.1,
+  "segment_s": 21.49,
+  "elapsed_s": 43.75
+ },
+ {
+  "step": 1500,
+  "rank": 2,
+  "train_loss": 0.36819996690750123,
+  "syncs": 3,
+  "payload_MB_sent": 69.02,
+  "wire_MB_est": 103.53,
+  "wait_s": 0.299,
+  "comm_s": 0.135,
+  "segment_s": 21.44,
+  "elapsed_s": 65.19
+ },
+ {
+  "step": 2000,
+  "rank": 2,
+  "train_loss": 0.34602889770269396,
+  "syncs": 4,
+  "payload_MB_sent": 92.03,
+  "wire_MB_est": 138.05,
+  "wait_s": 0.477,
+  "comm_s": 0.169,
+  "segment_s": 21.4,
+  "elapsed_s": 86.59
+ },
+ {
+  "step": 2500,
+  "rank": 2,
+  "train_loss": 0.3323057905435562,
+  "syncs": 5,
+  "payload_MB_sent": 115.04,
+  "wire_MB_est": 172.56,
+  "wait_s": 0.539,
+  "comm_s": 0.204,
+  "segment_s": 21.27,
+  "elapsed_s": 107.85
+ },
+ {
+  "step": 3000,
+  "rank": 2,
+  "train_loss": 0.3062803180515766,
+  "syncs": 6,
+  "payload_MB_sent": 138.05,
+  "wire_MB_est": 207.07,
+  "wait_s": 3.015,
+  "comm_s": 0.238,
+  "segment_s": 22.49,
+  "elapsed_s": 130.34
+ }
+]

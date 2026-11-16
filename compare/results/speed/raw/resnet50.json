@@ -1,0 +1,34 @@
+[
+ {
+  "model": "frozen_resnet50",
+  "params_total": 24689986,
+  "params_trainable": 1181954,
+  "input_resolution": "224x224",
+  "frames_per_input": 1,
+  "feature_dim_from_backbone": 2048,
+  "head_width": 512,
+  "classifier_input_dim": 2048,
+  "ssm_state_floats": 0,
+  "big_batch": 64,
+  "unit": "frame",
+  "params_backbone_frozen": 23508032,
+  "params_head_trainable": 1181954,
+  "note": "head here is a stand-in Linear(dim,512)-LN-Linear(512,256)-GELU-Linear(256,2) for timing; see compare/finetune.py for the real one",
+  "gflops_per_unit": 8.177,
+  "latency_ms_fp32_b1": 4.791,
+  "peak_mem_MB_fp32_b1": 115.1,
+  "throughput_units_per_s_fp32_b64": 649.1,
+  "peak_mem_MB_fp32_b64": 776.9,
+  "latency_ms_bf16_b1": 7.092,
+  "peak_mem_MB_bf16_b1": 113.7,
+  "throughput_units_per_s_bf16_b64": 1249.8,
+  "peak_mem_MB_bf16_b64": 484.1,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "measured_while_gpu_shared": "idle",
+  "gpu_state_after": {
+   "util_mem": "99 %, 949 MiB",
+   "windows_process_count": 37
+  },
+  "torch": "2.14.0+cu130"
+ }
+]

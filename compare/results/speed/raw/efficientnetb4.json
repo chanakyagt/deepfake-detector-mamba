@@ -1,0 +1,34 @@
+[
+ {
+  "model": "efficientnetb4",
+  "params_total": 17552202,
+  "params_trainable": 17552202,
+  "input_resolution": "256x256",
+  "frames_per_input": 1,
+  "classifier_input_dim": 1792,
+  "linear_input_dims_seen_last5": [
+   1792
+  ],
+  "ssm_state_floats": 0,
+  "big_batch": 64,
+  "unit": "image",
+  "missing_keys": 0,
+  "unexpected_keys": 0,
+  "gflops_per_unit": 3.904,
+  "latency_ms_fp32_b1": 12.175,
+  "peak_mem_MB_fp32_b1": 105.6,
+  "throughput_units_per_s_fp32_b64": 232.8,
+  "peak_mem_MB_fp32_b64": 1923.8,
+  "latency_ms_bf16_b1": 17.845,
+  "peak_mem_MB_bf16_b1": 112.1,
+  "throughput_units_per_s_bf16_b64": 427.4,
+  "peak_mem_MB_bf16_b64": 1024.3,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "measured_while_gpu_shared": "idle",
+  "gpu_state_after": {
+   "util_mem": "87 %, 2649 MiB",
+   "windows_process_count": 37
+  },
+  "torch": "2.14.0+cu130"
+ }
+]

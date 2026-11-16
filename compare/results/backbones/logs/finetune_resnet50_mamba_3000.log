@@ -1,0 +1,14 @@
+{"backbone": "resnet50", "head": "mamba", "params": 25434306, "steps": 3000, "batch": 64, "size": 224, "aug": "none", "label_smoothing": 0.0, "epochs": null, "train_images_seen": 192000, "train_images_available": 40000, "gpu": "NVIDIA GeForce RTX 4060 Ti"}
+{"step": 250, "train_loss": 0.2006, "elapsed_s": 39.2}
+{"step": 500, "train_loss": 0.1345, "elapsed_s": 77.4}
+{"step": 750, "train_loss": 0.0678, "elapsed_s": 121.0}
+{"step": 1000, "train_loss": 0.0545, "elapsed_s": 174.3, "val": {"n": 6000, "accuracy": 0.9715, "auc": 0.9967131666666667, "tp": 2866, "tn": 2963, "fp": 37, "fn": 134}}
+{"step": 1250, "train_loss": 0.0456, "elapsed_s": 218.1}
+{"step": 1500, "train_loss": 0.0354, "elapsed_s": 256.2}
+{"step": 1750, "train_loss": 0.0294, "elapsed_s": 294.3}
+{"step": 2000, "train_loss": 0.0266, "elapsed_s": 355.6, "val": {"n": 6000, "accuracy": 0.9756666666666667, "auc": 0.9973053888888889, "tp": 2890, "tn": 2964, "fp": 36, "fn": 110}}
+{"step": 2250, "train_loss": 0.0175, "elapsed_s": 398.8}
+{"step": 2500, "train_loss": 0.0187, "elapsed_s": 436.8}
+{"step": 2750, "train_loss": 0.0138, "elapsed_s": 481.7}
+{"step": 3000, "train_loss": 0.0112, "elapsed_s": 520.7, "val": {"n": 6000, "accuracy": 0.981, "auc": 0.9981256111111111, "tp": 2932, "tn": 2954, "fp": 46, "fn": 68}}
+{"train_seconds": 525.9, "test": {"n": 10905, "accuracy": 0.8685006877579092, "auc": 0.9537829170663433, "tp": 5326, "tn": 4145, "fp": 1268, "fn": 166}, "test_tuned_threshold": {"n": 10905, "accuracy": 0.8682255845942228, "auc": 0.9537829170663433, "tp": 5327, "tn": 4141, "fp": 1272, "fn": 165, "threshold_from_validation": 0.485, "val_accuracy_at_threshold": 0.9813333333333333}, "val_full": {"n": 6000, "accuracy": 0.981, "auc": 0.9981256111111111, "tp": 2932, "tn": 2954, "fp": 46, "fn": 68}}

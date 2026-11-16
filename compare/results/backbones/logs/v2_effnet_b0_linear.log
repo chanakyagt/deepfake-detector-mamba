@@ -1,0 +1,20 @@
+{"backbone": "effnet_b0", "head": "linear", "params": 4010110, "steps": 4375, "batch": 64, "size": 256, "aug": "strong", "label_smoothing": 0.1, "epochs": 2.0, "train_images_seen": 280000, "train_images_available": 140002, "gpu": "NVIDIA GeForce RTX 4060 Ti"}
+{"step": 250, "train_loss": 0.3831, "elapsed_s": 47.1}
+{"step": 500, "train_loss": 0.2657, "elapsed_s": 85.9}
+{"step": 750, "train_loss": 0.2515, "elapsed_s": 124.6}
+{"step": 1000, "train_loss": 0.2473, "elapsed_s": 161.7, "val": {"n": 6000, "accuracy": 0.9701666666666666, "auc": 0.9958241666666666, "tp": 2912, "tn": 2909, "fp": 91, "fn": 88}}
+{"step": 1250, "train_loss": 0.2435, "elapsed_s": 666.5}
+{"step": 1500, "train_loss": 0.2394, "elapsed_s": 1320.3}
+{"step": 1750, "train_loss": 0.2337, "elapsed_s": 1936.7}
+{"step": 2000, "train_loss": 0.2345, "elapsed_s": 2852.3, "val": {"n": 6000, "accuracy": 0.9663333333333334, "auc": 0.9936478888888889, "tp": 2891, "tn": 2907, "fp": 93, "fn": 109}}
+{"step": 2250, "train_loss": 0.23, "elapsed_s": 3292.4}
+{"step": 2500, "train_loss": 0.2257, "elapsed_s": 3772.3}
+{"step": 2750, "train_loss": 0.2236, "elapsed_s": 4187.2}
+{"step": 3000, "train_loss": 0.2241, "elapsed_s": 4587.1, "val": {"n": 6000, "accuracy": 0.9795, "auc": 0.9967741666666666, "tp": 2922, "tn": 2955, "fp": 45, "fn": 78}}
+{"step": 3250, "train_loss": 0.2209, "elapsed_s": 4973.8}
+{"step": 3500, "train_loss": 0.2225, "elapsed_s": 5337.7}
+{"step": 3750, "train_loss": 0.2218, "elapsed_s": 5633.7}
+{"step": 4000, "train_loss": 0.2201, "elapsed_s": 6191.3, "val": {"n": 6000, "accuracy": 0.9815, "auc": 0.9974762222222222, "tp": 2927, "tn": 2962, "fp": 38, "fn": 73}}
+{"step": 4250, "train_loss": 0.2195, "elapsed_s": 7074.1}
+{"step": 4375, "train_loss": 0.2175, "elapsed_s": 7209.0, "val": {"n": 6000, "accuracy": 0.9803333333333333, "auc": 0.9966998333333333, "tp": 2925, "tn": 2957, "fp": 43, "fn": 75}}
+{"train_seconds": 7215.0, "test": {"n": 10905, "accuracy": 0.8943603851444292, "auc": 0.949611153667044, "tp": 5306, "tn": 4447, "fp": 966, "fn": 186}, "test_tuned_threshold": {"n": 10905, "accuracy": 0.887757909215956, "auc": 0.949611153667044, "tp": 5342, "tn": 4339, "fp": 1074, "fn": 150, "threshold_from_validation": 0.37, "val_accuracy_at_threshold": 0.9804707314598762}, "val_full": {"n": 39428, "accuracy": 0.9798366642994826, "auc": 0.9971386151469929, "tp": 19071, "tn": 19562, "fp": 225, "fn": 570}}

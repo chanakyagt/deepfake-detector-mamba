@@ -1,0 +1,39 @@
+{
+ "target": "mamba_diloco",
+ "split": "Test",
+ "n": 10905,
+ "time": "2026-11-11 10:38:53",
+ "original_weights": {
+  "n": 10905,
+  "accuracy": 0.7145346171480972,
+  "auc": 0.7814544817990301,
+  "tp": 4744,
+  "tn": 3048,
+  "fp": 2365,
+  "fn": 748,
+  "mean_p_fake_on_real": 0.4547753632068634,
+  "mean_p_fake_on_fake": 0.8415107727050781
+ },
+ "edited_weights": {
+  "n": 10905,
+  "accuracy": 0.7149014213663457,
+  "auc": 0.7837754265344591,
+  "tp": 4741,
+  "tn": 3055,
+  "fp": 2358,
+  "fn": 751,
+  "mean_p_fake_on_real": 0.4545752704143524,
+  "mean_p_fake_on_fake": 0.8412814736366272
+ },
+ "forward_passes_used": 32,
+ "val_checks_used": 3,
+ "edits": 119,
+ "totals": {
+  "changed_params": 16384,
+  "total_params": 11503874,
+  "pct_params": 0.1424215877190588,
+  "changed_buffer_values": 0,
+  "total_buffer_values": 0
+ },
+ "note": "single read of Test; original and edited weights scored in the same pass over the data"
+}

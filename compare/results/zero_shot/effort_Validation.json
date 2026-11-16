@@ -1,0 +1,33 @@
+{
+ "model": "effort",
+ "source": "Effort (ICML 2025), effort_clip_L14_trainOn_FaceForensic.pth, trained on FF++",
+ "split": "Validation",
+ "images": 6000,
+ "input": "224x224",
+ "params_M": 504.61,
+ "missing_keys": 288,
+ "unexpected_keys": 0,
+ "metrics": {
+  "n": 6000,
+  "accuracy": 0.696,
+  "auc": 0.7656951111111111,
+  "tp": 2047,
+  "tn": 2129,
+  "fp": 871,
+  "fn": 953
+ },
+ "mean_p_fake_on_real": 0.41778423878178,
+ "mean_p_fake_on_fake": 0.6647430769838393,
+ "latency_ms_b1_fp32": 25.12,
+ "throughput_img_s_b64_fp32": 55.1,
+ "eval_seconds": 189.0,
+ "gpu": "NVIDIA GeForce RTX 4060 Ti",
+ "missing_sample": [
+  "backbone.encoder.layers.0.self_attn.k_proj.S_r",
+  "backbone.encoder.layers.0.self_attn.k_proj.U_r",
+  "backbone.encoder.layers.0.self_attn.k_proj.V_r",
+  "backbone.encoder.layers.0.self_attn.v_proj.S_r",
+  "backbone.encoder.layers.0.self_attn.v_proj.U_r"
+ ],
+ "unexpected_sample": []
+}

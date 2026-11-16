@@ -1,0 +1,34 @@
+[
+ {
+  "model": "frozen_clip_vitl14",
+  "params_total": 304492802,
+  "params_trainable": 526594,
+  "input_resolution": "224x224",
+  "frames_per_input": 1,
+  "feature_dim_from_backbone": 768,
+  "head_width": 512,
+  "classifier_input_dim": 768,
+  "ssm_state_floats": 0,
+  "big_batch": 64,
+  "unit": "frame",
+  "params_backbone_frozen": 303966208,
+  "params_head_trainable": 526594,
+  "note": "head here is a stand-in Linear(dim,512)-LN-Linear(512,256)-GELU-Linear(256,2) for timing; see compare/finetune.py for the real one",
+  "gflops_per_unit": 162.027,
+  "latency_ms_fp32_b1": 21.667,
+  "peak_mem_MB_fp32_b1": 1187.6,
+  "throughput_units_per_s_fp32_b64": 55.9,
+  "peak_mem_MB_fp32_b64": 2238.7,
+  "latency_ms_bf16_b1": 15.588,
+  "peak_mem_MB_bf16_b1": 1186.1,
+  "throughput_units_per_s_bf16_b64": 147.5,
+  "peak_mem_MB_bf16_b64": 1850.2,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "measured_while_gpu_shared": "idle",
+  "gpu_state_after": {
+   "util_mem": "100 %, 976 MiB",
+   "windows_process_count": 37
+  },
+  "torch": "2.14.0+cu130"
+ }
+]

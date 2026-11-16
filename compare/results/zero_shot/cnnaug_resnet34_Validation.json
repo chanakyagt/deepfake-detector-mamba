@@ -1,0 +1,25 @@
+{
+ "model": "cnnaug_resnet34",
+ "source": "DeepfakeBench v1.0.1 release, cnnaug_best.pth, trained on FF++ c23",
+ "split": "Validation",
+ "images": 6000,
+ "input": "256x256",
+ "params_M": 21.29,
+ "missing_keys": 0,
+ "unexpected_keys": 0,
+ "metrics": {
+  "n": 6000,
+  "accuracy": 0.481,
+  "auc": 0.452684,
+  "tp": 2641,
+  "tn": 245,
+  "fp": 2755,
+  "fn": 359
+ },
+ "mean_p_fake_on_real": 0.7678966718912125,
+ "mean_p_fake_on_fake": 0.7369360997652014,
+ "latency_ms_b1_fp32": 2.71,
+ "throughput_img_s_b64_fp32": 1050.6,
+ "eval_seconds": 6.3,
+ "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}

@@ -1,0 +1,25 @@
+{
+ "scanned": 190335,
+ "bad": [
+  "~/data/MegaDataset/Train/Fake/fake_42153.jpg"
+ ],
+ "scanned_subset": 56905,
+ "bad_in_subset_before_fix": [],
+ "fixes": [
+  {
+   "file": "Train/Fake/fake_42153.jpg",
+   "source_exists": true,
+   "copies": [
+    {
+     "location": "~/data/MegaDataset",
+     "size_before": 7168,
+     "size_after": 9688,
+     "source_size": 9688,
+     "size_matches_source": true,
+     "opens_with_load": true
+    }
+   ]
+  }
+ ],
+ "all_fixed": true
+}

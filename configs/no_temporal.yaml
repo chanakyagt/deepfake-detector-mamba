@@ -1,0 +1,19 @@
+model:
+  d_model: 512
+  n_layers: 4
+  d_state: 16
+  dropout: 0.1
+  temporal: false
+train:
+  mode: diloco
+  seed: 0
+  batch_size: 32
+  lr: 3.0e-4
+  weight_decay: 0.01
+  total_steps: 3000
+  inner_steps: 200
+  outer_lr: 0.7
+  outer_momentum: 0.9
+  comm_dtype: bfloat16
+  eval_every_syncs: 1
+  log_every: 200

@@ -1,0 +1,3214 @@
+{
+ "model": "cnnaug_resnet34",
+ "probe_images": 5,
+ "probe_indices": [
+  2941,
+  3356,
+  5572,
+  6944,
+  9272
+ ],
+ "input_resolution": 256,
+ "input_shape": [
+  5,
+  3,
+  256,
+  256
+ ],
+ "penultimate_feature_shape": [
+  5,
+  512
+ ],
+ "penultimate_dim": 512,
+ "head_W_shape": [
+  2,
+  512
+ ],
+ "head_b_shape": [
+  2
+ ],
+ "n_batchnorm_layers": 36,
+ "total_params": 21285698,
+ "checkpoint_missing_keys": 0,
+ "checkpoint_unexpected_keys": 0,
+ "compact": [
+  {
+   "layers": "backbone.resnet.0",
+   "type": "Conv2d",
+   "input": [
+    [
+     5,
+     3,
+     256,
+     256
+    ]
+   ],
+   "output": [
+    5,
+    64,
+    128,
+    128
+   ],
+   "param_shapes": {
+    "weight": [
+     64,
+     3,
+     7,
+     7
+    ]
+   },
+   "params_each": 9408
+  },
+  {
+   "layers": "backbone.resnet.1",
+   "type": "BatchNorm2d",
+   "input": [
+    [
+     5,
+     64,
+     128,
+     128
+    ]
+   ],
+   "output": [
+    5,
+    64,
+    128,
+    128
+   ],
+   "param_shapes": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "params_each": 128
+  },
+  {
+   "layers": "backbone.resnet.2",
+   "type": "ReLU",
+   "input": [
+    [
+     5,
+     64,
+     128,
+     128
+    ]
+   ],
+   "output": [
+    5,
+    64,
+    128,
+    128
+   ],
+   "param_shapes": {},
+   "params_each": 0
+  },
+  {
+   "layers": "backbone.resnet.3",
+   "type": "MaxPool2d",
+   "input": [
+    [
+     5,
+     64,
+     128,
+     128
+    ]
+   ],
+   "output": [
+    5,
+    64,
+    64,
+    64
+   ],
+   "param_shapes": {},
+   "params_each": 0
+  },
+  {
+   "layers": "backbone.resnet.4",
+   "type": "Sequential",
+   "input": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "output": [
+    5,
+    64,
+    64,
+    64
+   ],
+   "param_shapes": {},
+   "params_each": 221952
+  },
+  {
+   "layers": "backbone.resnet.5",
+   "type": "Sequential",
+   "input": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "output": [
+    5,
+    128,
+    32,
+    32
+   ],
+   "param_shapes": {},
+   "params_each": 1116416
+  },
+  {
+   "layers": "backbone.resnet.6",
+   "type": "Sequential",
+   "input": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "output": [
+    5,
+    256,
+    16,
+    16
+   ],
+   "param_shapes": {},
+   "params_each": 6822400
+  },
+  {
+   "layers": "backbone.resnet.7",
+   "type": "Sequential",
+   "input": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "output": [
+    5,
+    512,
+    8,
+    8
+   ],
+   "param_shapes": {},
+   "params_each": 13114368
+  },
+  {
+   "layers": "backbone.avgpool",
+   "type": "AdaptiveAvgPool2d",
+   "input": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "output": [
+    5,
+    512,
+    1,
+    1
+   ],
+   "param_shapes": {},
+   "params_each": 0
+  },
+  {
+   "layers": "backbone.fc",
+   "type": "Linear",
+   "input": [
+    [
+     5,
+     512
+    ]
+   ],
+   "output": [
+    5,
+    2
+   ],
+   "param_shapes": {
+    "weight": [
+     2,
+     512
+    ],
+    "bias": [
+     2
+    ]
+   },
+   "params_each": 1026
+  }
+ ],
+ "layers_full": [
+  {
+   "name": "backbone",
+   "type": "ResNet34",
+   "called": false,
+   "params": {},
+   "n_params_total": 21285698
+  },
+  {
+   "name": "backbone.resnet",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 21284672,
+   "in": [
+    [
+     5,
+     3,
+     256,
+     256
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.0",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     3,
+     7,
+     7
+    ]
+   },
+   "n_params_total": 9408,
+   "in": [
+    [
+     5,
+     3,
+     256,
+     256
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    128,
+    128
+   ]
+  },
+  {
+   "name": "backbone.resnet.1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "n_params_total": 128,
+   "in": [
+    [
+     5,
+     64,
+     128,
+     128
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    128,
+    128
+   ]
+  },
+  {
+   "name": "backbone.resnet.2",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     64,
+     128,
+     128
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    128,
+    128
+   ]
+  },
+  {
+   "name": "backbone.resnet.3",
+   "type": "MaxPool2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     64,
+     128,
+     128
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 221952,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.0",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 73984,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.0.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     64,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 36864,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.0.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "n_params_total": 128,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.0.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.0.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     64,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 36864,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.0.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "n_params_total": 128,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.1",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 73984,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     64,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 36864,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.1.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "n_params_total": 128,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.1.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.1.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     64,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 36864,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.1.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "n_params_total": 128,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.2",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 73984,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.2.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     64,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 36864,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.2.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "n_params_total": 128,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.2.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.2.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64,
+     64,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 36864,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.4.2.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     64
+    ],
+    "bias": [
+     64
+    ]
+   },
+   "n_params_total": 128,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    64,
+    64,
+    64
+   ]
+  },
+  {
+   "name": "backbone.resnet.5",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 1116416,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 230144,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     64,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 73728,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     128,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 147456,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0.downsample",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 8448,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0.downsample.0",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     64,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 8192,
+   "in": [
+    [
+     5,
+     64,
+     64,
+     64
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.0.downsample.1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.1",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 295424,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     128,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 147456,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.1.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.1.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.1.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     128,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 147456,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.1.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.2",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 295424,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.2.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     128,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 147456,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.2.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.2.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.2.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     128,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 147456,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.2.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.3",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 295424,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.3.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     128,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 147456,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.3.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.3.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.3.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128,
+     128,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 147456,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.5.3.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     128
+    ],
+    "bias": [
+     128
+    ]
+   },
+   "n_params_total": 256,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    128,
+    32,
+    32
+   ]
+  },
+  {
+   "name": "backbone.resnet.6",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 6822400,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 919040,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     128,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 294912,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0.downsample",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 33280,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0.downsample.0",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     128,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 32768,
+   "in": [
+    [
+     5,
+     128,
+     32,
+     32
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.0.downsample.1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.1",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 1180672,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.1.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.1.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.1.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.1.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.2",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 1180672,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.2.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.2.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.2.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.2.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.2.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.3",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 1180672,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.3.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.3.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.3.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.3.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.3.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.4",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 1180672,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.4.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.4.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.4.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.4.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.4.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.5",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 1180672,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.5.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.5.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.5.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.5.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 589824,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.6.5.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     256
+    ],
+    "bias": [
+     256
+    ]
+   },
+   "n_params_total": 512,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    256,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.resnet.7",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 13114368,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 3673088,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512,
+     256,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 1179648,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1024,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512,
+     512,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 2359296,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1024,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0.downsample",
+   "type": "Sequential",
+   "called": true,
+   "params": {},
+   "n_params_total": 132096,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0.downsample.0",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512,
+     256,
+     1,
+     1
+    ]
+   },
+   "n_params_total": 131072,
+   "in": [
+    [
+     5,
+     256,
+     16,
+     16
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.0.downsample.1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1024,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.1",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 4720640,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.1.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512,
+     512,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 2359296,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.1.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1024,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.1.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.1.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512,
+     512,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 2359296,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.1.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1024,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.2",
+   "type": "BasicBlock",
+   "called": true,
+   "params": {},
+   "n_params_total": 4720640,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.2.conv1",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512,
+     512,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 2359296,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.2.bn1",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1024,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.2.relu",
+   "type": "ReLU",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.2.conv2",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512,
+     512,
+     3,
+     3
+    ]
+   },
+   "n_params_total": 2359296,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.resnet.7.2.bn2",
+   "type": "BatchNorm2d",
+   "called": true,
+   "params": {
+    "weight": [
+     512
+    ],
+    "bias": [
+     512
+    ]
+   },
+   "n_params_total": 1024,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    8,
+    8
+   ]
+  },
+  {
+   "name": "backbone.avgpool",
+   "type": "AdaptiveAvgPool2d",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     512,
+     8,
+     8
+    ]
+   ],
+   "out": [
+    5,
+    512,
+    1,
+    1
+   ]
+  },
+  {
+   "name": "backbone.fc",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     2,
+     512
+    ],
+    "bias": [
+     2
+    ]
+   },
+   "n_params_total": 1026,
+   "in": [
+    [
+     5,
+     512
+    ]
+   ],
+   "out": [
+    5,
+    2
+   ]
+  },
+  {
+   "name": "loss_func",
+   "type": "CrossEntropyLoss",
+   "called": false,
+   "params": {},
+   "n_params_total": 0
+  }
+ ]
+}

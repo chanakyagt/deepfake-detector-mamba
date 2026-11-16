@@ -1,0 +1,3 @@
+resnet50 Train: 40000 images, dim 2048, 38s
+resnet50 Validation: 6000 images, dim 2048, 6s
+resnet50 Test: 10905 images, dim 2048, 10s

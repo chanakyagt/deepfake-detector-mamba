@@ -1,0 +1,39 @@
+[
+ {
+  "rank": 3,
+  "world": 4,
+  "host": "<host>",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "mode": "diloco",
+  "inner_steps": 500,
+  "batch_size": 32,
+  "train_clips_this_worker": 1000,
+  "trainable_params": 1729666,
+  "payload_MB": 3.459332
+ },
+ {
+  "step": 500,
+  "rank": 3,
+  "train_loss": 0.29750698293355526,
+  "syncs": 1,
+  "payload_MB_sent": 3.46,
+  "wire_MB_est": 5.19,
+  "wait_s": 0.001,
+  "comm_s": 0.012,
+  "segment_s": 60.15,
+  "elapsed_s": 60.15
+ },
+ {
+  "step": 1000,
+  "rank": 3,
+  "train_loss": 0.1423664392211176,
+  "syncs": 2,
+  "payload_MB_sent": 6.92,
+  "wire_MB_est": 10.38,
+  "wait_s": 2.366,
+  "comm_s": 0.017,
+  "segment_s": 60.38,
+  "elapsed_s": 120.53
+ }
+]

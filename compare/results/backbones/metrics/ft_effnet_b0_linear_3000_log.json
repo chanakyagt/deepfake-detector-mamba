@@ -1,0 +1,120 @@
+[
+ {
+  "backbone": "effnet_b0",
+  "head": "linear",
+  "params": 4010110,
+  "steps": 3000,
+  "batch": 64,
+  "train_images_seen": 192000,
+  "train_images_available": 40000,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti"
+ },
+ {
+  "step": 250,
+  "train_loss": 0.2212,
+  "elapsed_s": 674.0
+ },
+ {
+  "step": 500,
+  "train_loss": 0.0779,
+  "elapsed_s": 705.2
+ },
+ {
+  "step": 750,
+  "train_loss": 0.0596,
+  "elapsed_s": 736.6
+ },
+ {
+  "step": 1000,
+  "train_loss": 0.0464,
+  "elapsed_s": 766.7,
+  "val": {
+   "n": 6000,
+   "accuracy": 0.966,
+   "auc": 0.9960726111111111,
+   "tp": 2831,
+   "tn": 2965,
+   "fp": 35,
+   "fn": 169
+  }
+ },
+ {
+  "step": 1250,
+  "train_loss": 0.0392,
+  "elapsed_s": 880.8
+ },
+ {
+  "step": 1500,
+  "train_loss": 0.0271,
+  "elapsed_s": 987.5
+ },
+ {
+  "step": 1750,
+  "train_loss": 0.0279,
+  "elapsed_s": 1094.3
+ },
+ {
+  "step": 2000,
+  "train_loss": 0.0224,
+  "elapsed_s": 1201.8,
+  "val": {
+   "n": 6000,
+   "accuracy": 0.9755,
+   "auc": 0.9975642777777778,
+   "tp": 2878,
+   "tn": 2975,
+   "fp": 25,
+   "fn": 122
+  }
+ },
+ {
+  "step": 2250,
+  "train_loss": 0.0133,
+  "elapsed_s": 1656.2
+ },
+ {
+  "step": 2500,
+  "train_loss": 0.0142,
+  "elapsed_s": 1690.2
+ },
+ {
+  "step": 2750,
+  "train_loss": 0.0095,
+  "elapsed_s": 1715.2
+ },
+ {
+  "step": 3000,
+  "train_loss": 0.0102,
+  "elapsed_s": 1749.9,
+  "val": {
+   "n": 6000,
+   "accuracy": 0.9816666666666667,
+   "auc": 0.9978277222222223,
+   "tp": 2933,
+   "tn": 2957,
+   "fp": 43,
+   "fn": 67
+  }
+ },
+ {
+  "train_seconds": 1756.0,
+  "test": {
+   "n": 10905,
+   "accuracy": 0.8684089867033471,
+   "auc": 0.9575027694246903,
+   "tp": 5280,
+   "tn": 4190,
+   "fp": 1223,
+   "fn": 212
+  },
+  "val_full": {
+   "n": 6000,
+   "accuracy": 0.9816666666666667,
+   "auc": 0.9978277222222223,
+   "tp": 2933,
+   "tn": 2957,
+   "fp": 43,
+   "fn": 67
+  }
+ }
+]

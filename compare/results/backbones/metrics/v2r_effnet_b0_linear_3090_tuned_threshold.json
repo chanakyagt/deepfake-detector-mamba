@@ -1,0 +1,11 @@
+{
+ "n": 10905,
+ "accuracy": 0.8929848693259973,
+ "auc": 0.9583109583911517,
+ "tp": 5376,
+ "tn": 4362,
+ "fp": 1051,
+ "fn": 116,
+ "threshold_from_validation": 0.42,
+ "val_accuracy_at_threshold": 0.9849599269554631
+}

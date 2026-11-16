@@ -1,0 +1,3 @@
+effnet_b0 Train: 140002 images, dim 1280, 88s
+effnet_b0 Validation: 39428 images, dim 1280, 25s
+effnet_b0 Test: 10905 images, dim 1280, 7s

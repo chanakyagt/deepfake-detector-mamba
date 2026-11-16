@@ -1,0 +1,68 @@
+{
+ "model": "cnnaug_resnet34",
+ "setting": "seed 0, k=32, 256 Test images through the full network after set_head",
+ "heads": {
+  "bias": {
+   "max_abs_diff": 0.0004607394307039048,
+   "max_abs_score": 3.4207513832293994,
+   "sign_agreement": 1.0
+  },
+  "bias_opt": {
+   "max_abs_diff": 0.0004607158795089106,
+   "max_abs_score": 3.1521780755290347,
+   "sign_agreement": 1.0
+  },
+  "ridge": {
+   "max_abs_diff": 0.0005460299277020297,
+   "max_abs_score": 2.867533964932922,
+   "sign_agreement": 1.0
+  },
+  "centroid": {
+   "max_abs_diff": 0.00013029616959164825,
+   "max_abs_score": 1.0320604692195245,
+   "sign_agreement": 1.0
+  },
+  "lda": {
+   "max_abs_diff": 0.009384031967130113,
+   "max_abs_score": 43.88400374589898,
+   "sign_agreement": 1.0
+  },
+  "wise_ridge_0.25": {
+   "max_abs_diff": 0.00046933798465631504,
+   "max_abs_score": 3.622507605928754,
+   "sign_agreement": 1.0
+  },
+  "wise_ridge_0.5": {
+   "max_abs_diff": 0.0004770930927979755,
+   "max_abs_score": 2.6715462024063084,
+   "sign_agreement": 1.0
+  },
+  "wise_ridge_0.75": {
+   "max_abs_diff": 0.00048592108454470484,
+   "max_abs_score": 2.769540083669609,
+   "sign_agreement": 1.0
+  },
+  "wise_lda_0.25": {
+   "max_abs_diff": 0.00245902505950113,
+   "max_abs_score": 12.827669766384538,
+   "sign_agreement": 1.0
+  },
+  "wise_lda_0.5": {
+   "max_abs_diff": 0.004675227095887635,
+   "max_abs_score": 23.179781092889343,
+   "sign_agreement": 1.0
+  },
+  "wise_lda_0.75": {
+   "max_abs_diff": 0.007009739069509635,
+   "max_abs_score": 33.53189241939416,
+   "sign_agreement": 1.0
+  },
+  "original_rewritten": {
+   "max_abs_diff": 0.0004607484114877991
+  }
+ },
+ "adabn_plus_ridge": {
+  "max_abs_diff": 1.1107023188294818e-05,
+  "max_abs_score": 7.717610847222027
+ }
+}

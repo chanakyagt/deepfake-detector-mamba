@@ -1,0 +1,25 @@
+{
+ "model": "ucf",
+ "source": "DeepfakeBench v1.0.1 release, ucf_best.pth, trained on FF++ c23",
+ "split": "Test",
+ "images": 10905,
+ "input": "256x256",
+ "params_M": 46.84,
+ "missing_keys": 0,
+ "unexpected_keys": 0,
+ "metrics": {
+  "n": 10905,
+  "accuracy": 0.5061898211829436,
+  "auc": 0.4494053557773906,
+  "tp": 1124,
+  "tn": 4396,
+  "fp": 1017,
+  "fn": 4368
+ },
+ "mean_p_fake_on_real": 0.2981638937672437,
+ "mean_p_fake_on_fake": 0.2771852515503039,
+ "latency_ms_b1_fp32": 7.22,
+ "throughput_img_s_b64_fp32": 220.3,
+ "eval_seconds": 50.4,
+ "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}

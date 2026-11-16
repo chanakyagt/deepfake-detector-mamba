@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" width="760" height="180">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14B8A6"/>
+      <stop offset="1" stop-color="#0E7490"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F97316"/>
+      <stop offset="1" stop-color="#E11D48"/>
+    </linearGradient>
+    <clipPath id="left"><rect x="20" y="10" width="70" height="160"/></clipPath>
+    <clipPath id="right"><rect x="90" y="10" width="70" height="160"/></clipPath>
+  </defs>
+  <!-- face: left half real (solid), right half fake (pixel grid) -->
+  <g clip-path="url(#left)">
+    <ellipse cx="90" cy="90" rx="58" ry="72" fill="url(#g1)"/>
+    <circle cx="68" cy="78" r="7" fill="#ffffff"/>
+  </g>
+  <g clip-path="url(#right)">
+    <ellipse cx="90" cy="90" rx="58" ry="72" fill="none" stroke="url(#g2)" stroke-width="6"/>
+    <g fill="url(#g2)">
+      <rect x="96" y="40" width="14" height="14" rx="2"/><rect x="114" y="40" width="14" height="14" rx="2" opacity="0.55"/>
+      <rect x="96" y="58" width="14" height="14" rx="2" opacity="0.55"/><rect x="114" y="58" width="14" height="14" rx="2"/>
+      <rect x="132" y="58" width="10" height="14" rx="2" opacity="0.35"/>
+      <rect x="96" y="76" width="14" height="14" rx="2"/><rect x="114" y="76" width="14" height="14" rx="2" opacity="0.35"/>
+      <rect x="132" y="76" width="10" height="14" rx="2"/>
+      <rect x="96" y="94" width="14" height="14" rx="2" opacity="0.55"/><rect x="114" y="94" width="14" height="14" rx="2"/>
+      <rect x="96" y="112" width="14" height="14" rx="2"/><rect x="114" y="112" width="14" height="14" rx="2" opacity="0.55"/>
+      <rect x="96" y="130" width="14" height="12" rx="2" opacity="0.35"/>
+    </g>
+  </g>
+  <!-- mamba: S-shaped scan line sweeping across the face -->
+  <path d="M8 120 C 50 150, 70 40, 110 70 S 160 130, 176 52" fill="none" stroke="#FACC15" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="176" cy="52" r="8" fill="#FACC15"/>
+  <!-- wordmark -->
+  <text x="208" y="96" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="54" font-weight="700" fill="#0E9F8F" letter-spacing="-1">deepfake<tspan fill="#94A3B8" font-weight="400">·</tspan>detector</text>
+  <text x="210" y="146" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="40" font-weight="600" fill="url(#g2)" letter-spacing="6">MAMBA</text>
+</svg>

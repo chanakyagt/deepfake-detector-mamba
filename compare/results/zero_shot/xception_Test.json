@@ -1,0 +1,25 @@
+{
+ "model": "xception",
+ "source": "DeepfakeBench v1.0.1 release, xception_best.pth, trained on FF++ c23",
+ "split": "Test",
+ "images": 10905,
+ "input": "256x256",
+ "params_M": 21.86,
+ "missing_keys": 0,
+ "unexpected_keys": 0,
+ "metrics": {
+  "n": 10905,
+  "accuracy": 0.5074736359468134,
+  "auc": 0.47139252916658647,
+  "tp": 841,
+  "tn": 4693,
+  "fp": 720,
+  "fn": 4651
+ },
+ "mean_p_fake_on_real": 0.3888096840156295,
+ "mean_p_fake_on_fake": 0.3759724854493601,
+ "latency_ms_b1_fp32": 3.72,
+ "throughput_img_s_b64_fp32": 441.8,
+ "eval_seconds": 123.9,
+ "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}

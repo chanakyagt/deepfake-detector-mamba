@@ -1,0 +1,25 @@
+{
+ "model": "f3net",
+ "source": "DeepfakeBench v1.0.1 release, f3net_best.pth, trained on FF++ c23",
+ "split": "Test",
+ "images": 10905,
+ "input": "256x256",
+ "params_M": 22.52,
+ "missing_keys": 0,
+ "unexpected_keys": 0,
+ "metrics": {
+  "n": 10905,
+  "accuracy": 0.46895919303071987,
+  "auc": 0.42957381268611117,
+  "tp": 1706,
+  "tn": 3408,
+  "fp": 2005,
+  "fn": 3786
+ },
+ "mean_p_fake_on_real": 0.44890064642670946,
+ "mean_p_fake_on_fake": 0.3992034631741175,
+ "latency_ms_b1_fp32": 4.18,
+ "throughput_img_s_b64_fp32": 416.8,
+ "eval_seconds": 27.0,
+ "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}

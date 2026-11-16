@@ -1,0 +1,45 @@
+{
+ "target": "effort",
+ "split": "Test",
+ "n": 10905,
+ "time": "2026-11-11 12:27:22",
+ "original_weights": {
+  "n": 10905,
+  "accuracy": 0.6001834021091242,
+  "auc": 0.6568396212134769,
+  "tp": 3359,
+  "tn": 3186,
+  "fp": 2227,
+  "fn": 2133,
+  "mean_p_fake_on_real": 0.4662553668022156,
+  "mean_p_fake_on_fake": 0.6029304265975952
+ },
+ "edited_weights": {
+  "n": 10905,
+  "accuracy": 0.636680421824851,
+  "auc": 0.7004838941454773,
+  "tp": 3676,
+  "tn": 3267,
+  "fp": 2146,
+  "fn": 1816,
+  "mean_p_fake_on_real": 0.45067158341407776,
+  "mean_p_fake_on_fake": 0.6205064654350281
+ },
+ "forward_passes_used": 15,
+ "val_checks_used": 3,
+ "edits": 8,
+ "changed_tensors": [
+  "head.weight",
+  "head.bias"
+ ],
+ "totals": {
+  "changed_params": 2050,
+  "total_params": 504606722,
+  "pct_params": 0.000406256974119342,
+  "changed_buffer_values": 0,
+  "total_buffer_values": 0,
+  "forward_used_params": 303378530,
+  "pct_forward_used_params": 0.0006757234930237153
+ },
+ "note": "single read of Test; each batch scored with original then edited weights (changed tensors swapped in place)"
+}

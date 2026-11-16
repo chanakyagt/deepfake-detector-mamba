@@ -1,0 +1,37 @@
+[
+ {
+  "model": "univfd",
+  "params_total": 303966977,
+  "params_trainable": 303966977,
+  "input_resolution": "224x224 center-crop",
+  "frames_per_input": 1,
+  "classifier_input_dim": 768,
+  "linear_input_dims_seen_last5": [
+   1024,
+   1024,
+   4096,
+   1024,
+   768
+  ],
+  "ssm_state_floats": 0,
+  "big_batch": 64,
+  "unit": "image",
+  "note": "CLIP ViT-L/14 frozen + one Linear(768,1) probe",
+  "gflops_per_unit": 162.026,
+  "latency_ms_fp32_b1": 21.569,
+  "peak_mem_MB_fp32_b1": 1186.5,
+  "throughput_units_per_s_fp32_b64": 55.8,
+  "peak_mem_MB_fp32_b64": 2236.7,
+  "latency_ms_bf16_b1": 15.973,
+  "peak_mem_MB_bf16_b1": 1755.4,
+  "throughput_units_per_s_bf16_b64": 147.6,
+  "peak_mem_MB_bf16_b64": 2419.2,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "measured_while_gpu_shared": "idle",
+  "gpu_state_after": {
+   "util_mem": "100 %, 3495 MiB",
+   "windows_process_count": 37
+  },
+  "torch": "2.14.0+cu130"
+ }
+]

@@ -1,0 +1,34 @@
+[
+ {
+  "model": "cnnaug_resnet34",
+  "params_total": 21285698,
+  "params_trainable": 21285698,
+  "input_resolution": "256x256",
+  "frames_per_input": 1,
+  "classifier_input_dim": 512,
+  "linear_input_dims_seen_last5": [
+   512
+  ],
+  "ssm_state_floats": 0,
+  "big_batch": 64,
+  "unit": "image",
+  "missing_keys": 0,
+  "unexpected_keys": 0,
+  "gflops_per_unit": 9.569,
+  "latency_ms_fp32_b1": 3.101,
+  "peak_mem_MB_fp32_b1": 102.3,
+  "throughput_units_per_s_fp32_b64": 1053.2,
+  "peak_mem_MB_fp32_b64": 651.7,
+  "latency_ms_bf16_b1": 4.093,
+  "peak_mem_MB_bf16_b1": 140.7,
+  "throughput_units_per_s_bf16_b64": 1899.8,
+  "peak_mem_MB_bf16_b64": 427.7,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti",
+  "measured_while_gpu_shared": "idle",
+  "gpu_state_after": {
+   "util_mem": "99 %, 1503 MiB",
+   "windows_process_count": 37
+  },
+  "torch": "2.14.0+cu130"
+ }
+]

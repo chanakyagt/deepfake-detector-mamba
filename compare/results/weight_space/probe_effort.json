@@ -1,0 +1,8276 @@
+{
+ "model": "effort",
+ "probe_images": 5,
+ "probe_indices": [
+  2941,
+  3356,
+  5572,
+  6944,
+  9272
+ ],
+ "input_resolution": 224,
+ "input_shape": [
+  5,
+  3,
+  224,
+  224
+ ],
+ "penultimate_feature_shape": [
+  5,
+  1024
+ ],
+ "penultimate_dim": 1024,
+ "head_W_shape": [
+  2,
+  1024
+ ],
+ "head_b_shape": [
+  2
+ ],
+ "n_batchnorm_layers": 0,
+ "total_params": 303378530,
+ "checkpoint_missing_keys": 0,
+ "checkpoint_unexpected_keys": 0,
+ "compact": [
+  {
+   "layers": "backbone.embeddings",
+   "type": "CLIPVisionEmbeddings",
+   "input": [
+    [
+     5,
+     3,
+     224,
+     224
+    ]
+   ],
+   "output": [
+    5,
+    257,
+    1024
+   ],
+   "param_shapes": {
+    "class_embedding": [
+     1024
+    ]
+   },
+   "params_each": 866304
+  },
+  {
+   "layers": "backbone.pre_layrnorm",
+   "type": "LayerNorm",
+   "input": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "output": [
+    5,
+    257,
+    1024
+   ],
+   "param_shapes": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "params_each": 2048
+  },
+  {
+   "layers": "backbone.encoder.layers.0 .. backbone.encoder.layers.23 (x24)",
+   "type": "CLIPEncoderLayer",
+   "input": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "output": [
+    5,
+    257,
+    1024
+   ],
+   "param_shapes": {},
+   "params_each": 12604420
+  },
+  {
+   "layers": "backbone.post_layernorm",
+   "type": "LayerNorm",
+   "input": [
+    [
+     5,
+     1024
+    ]
+   ],
+   "output": [
+    5,
+    1024
+   ],
+   "param_shapes": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "params_each": 2048
+  },
+  {
+   "layers": "head",
+   "type": "Linear",
+   "input": [
+    [
+     5,
+     1024
+    ]
+   ],
+   "output": [
+    5,
+    2
+   ],
+   "param_shapes": {
+    "weight": [
+     2,
+     1024
+    ],
+    "bias": [
+     2
+    ]
+   },
+   "params_each": 2050
+  }
+ ],
+ "layers_full": [
+  {
+   "name": "backbone",
+   "type": "CLIPVisionModel",
+   "called": true,
+   "params": {},
+   "n_params_total": 303376480,
+   "in": [
+    [
+     5,
+     3,
+     224,
+     224
+    ]
+   ],
+   "out": {
+    "last_hidden_state": [
+     5,
+     257,
+     1024
+    ],
+    "pooler_output": [
+     5,
+     1024
+    ]
+   }
+  },
+  {
+   "name": "backbone.embeddings",
+   "type": "CLIPVisionEmbeddings",
+   "called": true,
+   "params": {
+    "class_embedding": [
+     1024
+    ]
+   },
+   "n_params_total": 866304,
+   "in": [
+    [
+     5,
+     3,
+     224,
+     224
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.embeddings.patch_embedding",
+   "type": "Conv2d",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     3,
+     14,
+     14
+    ]
+   },
+   "n_params_total": 602112,
+   "in": [
+    [
+     5,
+     3,
+     224,
+     224
+    ]
+   ],
+   "out": [
+    5,
+    1024,
+    16,
+    16
+   ]
+  },
+  {
+   "name": "backbone.embeddings.position_embedding",
+   "type": "Embedding",
+   "called": true,
+   "params": {
+    "weight": [
+     257,
+     1024
+    ]
+   },
+   "n_params_total": 263168,
+   "in": [
+    [
+     1,
+     257
+    ]
+   ],
+   "out": [
+    1,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.pre_layrnorm",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder",
+   "type": "CLIPEncoder",
+   "called": true,
+   "params": {},
+   "n_params_total": 302506080,
+   "in": null,
+   "out": {
+    "last_hidden_state": [
+     5,
+     257,
+     1024
+    ]
+   }
+  },
+  {
+   "name": "backbone.encoder.layers",
+   "type": "ModuleList",
+   "called": false,
+   "params": {},
+   "n_params_total": 302506080
+  },
+  {
+   "name": "backbone.encoder.layers.0",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.0.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.1.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.2.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.3.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.4.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.5.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.6.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.7.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.8.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.9.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.10.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.11.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.12.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.13.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.14.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.15.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.16.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.17.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.18.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.19.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.20.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.21.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.22.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23",
+   "type": "CLIPEncoderLayer",
+   "called": true,
+   "params": {},
+   "n_params_total": 12604420,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.self_attn",
+   "type": "CLIPAttention",
+   "called": true,
+   "params": {},
+   "n_params_total": 4206596,
+   "in": null,
+   "out": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.self_attn.k_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.self_attn.v_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.self_attn.q_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.self_attn.out_proj",
+   "type": "SVDResidualLinear",
+   "called": true,
+   "params": {
+    "weight_main": [
+     1024,
+     1024
+    ],
+    "bias": [
+     1024
+    ],
+    "S_residual": [
+     1
+    ],
+    "U_residual": [
+     1024,
+     1
+    ],
+    "V_residual": [
+     1,
+     1024
+    ]
+   },
+   "n_params_total": 1051649,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.layer_norm1",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.mlp",
+   "type": "CLIPMLP",
+   "called": true,
+   "params": {},
+   "n_params_total": 8393728,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.mlp.activation_fn",
+   "type": "QuickGELUActivation",
+   "called": true,
+   "params": {},
+   "n_params_total": 0,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.mlp.fc1",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     4096,
+     1024
+    ],
+    "bias": [
+     4096
+    ]
+   },
+   "n_params_total": 4198400,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    4096
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.mlp.fc2",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     1024,
+     4096
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 4195328,
+   "in": [
+    [
+     5,
+     257,
+     4096
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.encoder.layers.23.layer_norm2",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     257,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    257,
+    1024
+   ]
+  },
+  {
+   "name": "backbone.post_layernorm",
+   "type": "LayerNorm",
+   "called": true,
+   "params": {
+    "weight": [
+     1024
+    ],
+    "bias": [
+     1024
+    ]
+   },
+   "n_params_total": 2048,
+   "in": [
+    [
+     5,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    1024
+   ]
+  },
+  {
+   "name": "head",
+   "type": "Linear",
+   "called": true,
+   "params": {
+    "weight": [
+     2,
+     1024
+    ],
+    "bias": [
+     2
+    ]
+   },
+   "n_params_total": 2050,
+   "in": [
+    [
+     5,
+     1024
+    ]
+   ],
+   "out": [
+    5,
+    2
+   ]
+  },
+  {
+   "name": "loss_func",
+   "type": "CrossEntropyLoss",
+   "called": false,
+   "params": {},
+   "n_params_total": 0
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "model": "xception",
+ "setting": "seed 0, k=32, 256 Test images through the full network after set_head",
+ "heads": {
+  "bias": {
+   "max_abs_diff": 0.0027846800080035816,
+   "max_abs_score": 4.776011111366273,
+   "sign_agreement": 1.0
+  },
+  "bias_opt": {
+   "max_abs_diff": 0.002784650481783224,
+   "max_abs_score": 4.90322503676559,
+   "sign_agreement": 1.0
+  },
+  "ridge": {
+   "max_abs_diff": 0.002394991337532515,
+   "max_abs_score": 2.1311279469652105,
+   "sign_agreement": 1.0
+  },
+  "centroid": {
+   "max_abs_diff": 0.0014171349282059431,
+   "max_abs_score": 3.7231161643764694,
+   "sign_agreement": 1.0
+  },
+  "lda": {
+   "max_abs_diff": 0.030706711145192855,
+   "max_abs_score": 25.17906540313508,
+   "sign_agreement": 1.0
+  },
+  "wise_ridge_0.25": {
+   "max_abs_diff": 0.0016388770460766255,
+   "max_abs_score": 3.6434237809486936,
+   "sign_agreement": 1.0
+  },
+  "wise_ridge_0.5": {
+   "max_abs_diff": 0.0017588790418534561,
+   "max_abs_score": 2.591246435011778,
+   "sign_agreement": 1.0
+  },
+  "wise_ridge_0.75": {
+   "max_abs_diff": 0.001987953559100586,
+   "max_abs_score": 2.2516106743370985,
+   "sign_agreement": 1.0
+  },
+  "wise_lda_0.25": {
+   "max_abs_diff": 0.008055027351172583,
+   "max_abs_score": 7.9903372363860665,
+   "sign_agreement": 1.0
+  },
+  "wise_lda_0.5": {
+   "max_abs_diff": 0.015577614169245635,
+   "max_abs_score": 13.367615616319313,
+   "sign_agreement": 1.0
+  },
+  "wise_lda_0.75": {
+   "max_abs_diff": 0.023166004515040584,
+   "max_abs_score": 18.828536317810396,
+   "sign_agreement": 1.0
+  },
+  "original_rewritten": {
+   "max_abs_diff": 0.0027846513442240095
+  }
+ },
+ "adabn_plus_ridge": {
+  "max_abs_diff": 5.396672670521241e-06,
+  "max_abs_score": 6.552032319239195
+ }
+}

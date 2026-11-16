@@ -1,0 +1,135 @@
+[
+ {
+  "backbone": "effnet_b0",
+  "head": "mamba",
+  "params": 5737214,
+  "steps": 3000,
+  "batch": 64,
+  "size": 224,
+  "aug": "none",
+  "label_smoothing": 0.0,
+  "epochs": null,
+  "train_images_seen": 192000,
+  "train_images_available": 40000,
+  "gpu": "NVIDIA GeForce RTX 4060 Ti"
+ },
+ {
+  "step": 250,
+  "train_loss": 0.2153,
+  "elapsed_s": 29.6
+ },
+ {
+  "step": 500,
+  "train_loss": 0.096,
+  "elapsed_s": 54.5
+ },
+ {
+  "step": 750,
+  "train_loss": 0.0662,
+  "elapsed_s": 79.8
+ },
+ {
+  "step": 1000,
+  "train_loss": 0.1275,
+  "elapsed_s": 105.2,
+  "val": {
+   "n": 6000,
+   "accuracy": 0.8955,
+   "auc": 0.9681006111111111,
+   "tp": 2553,
+   "tn": 2820,
+   "fp": 180,
+   "fn": 447
+  }
+ },
+ {
+  "step": 1250,
+  "train_loss": 0.0992,
+  "elapsed_s": 134.7
+ },
+ {
+  "step": 1500,
+  "train_loss": 0.0534,
+  "elapsed_s": 160.4
+ },
+ {
+  "step": 1750,
+  "train_loss": 0.0446,
+  "elapsed_s": 186.9
+ },
+ {
+  "step": 2000,
+  "train_loss": 0.0438,
+  "elapsed_s": 213.2,
+  "val": {
+   "n": 6000,
+   "accuracy": 0.9693333333333334,
+   "auc": 0.9956811666666666,
+   "tp": 2875,
+   "tn": 2941,
+   "fp": 59,
+   "fn": 125
+  }
+ },
+ {
+  "step": 2250,
+  "train_loss": 0.0305,
+  "elapsed_s": 243.2
+ },
+ {
+  "step": 2500,
+  "train_loss": 0.0322,
+  "elapsed_s": 269.5
+ },
+ {
+  "step": 2750,
+  "train_loss": 0.0285,
+  "elapsed_s": 295.2
+ },
+ {
+  "step": 3000,
+  "train_loss": 0.025,
+  "elapsed_s": 320.8,
+  "val": {
+   "n": 6000,
+   "accuracy": 0.9771666666666666,
+   "auc": 0.9965511666666667,
+   "tp": 2917,
+   "tn": 2946,
+   "fp": 54,
+   "fn": 83
+  }
+ },
+ {
+  "train_seconds": 324.5,
+  "test": {
+   "n": 10905,
+   "accuracy": 0.8616231086657496,
+   "auc": 0.9569327550181652,
+   "tp": 5263,
+   "tn": 4133,
+   "fp": 1280,
+   "fn": 229
+  },
+  "test_tuned_threshold": {
+   "n": 10905,
+   "accuracy": 0.8635488308115543,
+   "auc": 0.9569327550181652,
+   "tp": 5252,
+   "tn": 4165,
+   "fp": 1248,
+   "fn": 240,
+   "threshold_from_validation": 0.555,
+   "val_accuracy_at_threshold": 0.9775
+  },
+  "val_full": {
+   "n": 6000,
+   "accuracy": 0.9771666666666666,
+   "auc": 0.9965511666666667,
+   "tp": 2917,
+   "tn": 2946,
+   "fp": 54,
+   "fn": 83
+  }
+ }
+]

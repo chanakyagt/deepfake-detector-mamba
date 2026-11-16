@@ -1,0 +1,136 @@
+{
+ "files": 190335,
+ "unreadable": 0,
+ "unique": 173200,
+ "dup_groups_by_splits": {
+  "('Train',)": 11417,
+  "('Train', 'Validation')": 5334,
+  "('Validation',)": 384
+ },
+ "cross_label_groups": 0,
+ "test_imgs_with_train_copy": 0,
+ "test_imgs_with_val_copy": 0,
+ "val_imgs_with_train_copy": 5334,
+ "examples": [
+  [
+   [
+    "Train",
+    "Real",
+    "real_11193.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4791.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11194.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4792.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11195.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4793.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11198.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4805.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11200.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4820.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11230.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4835.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11247.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4858.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11250.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4861.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11284.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4946.jpg"
+   ]
+  ],
+  [
+   [
+    "Train",
+    "Real",
+    "real_11285.jpg"
+   ],
+   [
+    "Validation",
+    "Real",
+    "real_4947.jpg"
+   ]
+  ]
+ ]
+}

@@ -1,0 +1,7 @@
+[hub] listening on 0.0.0.0:10100, waiting for 4 workers
+[hub] rank 1 connected from <ip> (1/4)
+[hub] rank 2 connected from <ip> (2/4)
+[hub] rank 3 connected from <ip> (3/4)
+[hub] rank 0 connected from <ip> (4/4)
+[hub] all 4 workers connected, training can start
+[hub] done after 31 rounds

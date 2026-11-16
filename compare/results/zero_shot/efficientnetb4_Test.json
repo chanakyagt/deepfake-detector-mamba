@@ -1,0 +1,25 @@
+{
+ "model": "efficientnetb4",
+ "source": "DeepfakeBench v1.0.1 release, effnb4_best.pth, trained on FF++ c23",
+ "split": "Test",
+ "images": 10905,
+ "input": "256x256",
+ "params_M": 17.55,
+ "missing_keys": 0,
+ "unexpected_keys": 0,
+ "metrics": {
+  "n": 10905,
+  "accuracy": 0.5033470884915177,
+  "auc": 0.4980113492254962,
+  "tp": 1647,
+  "tn": 3842,
+  "fp": 1571,
+  "fn": 3845
+ },
+ "mean_p_fake_on_real": 0.35445039951670576,
+ "mean_p_fake_on_fake": 0.3596427480260767,
+ "latency_ms_b1_fp32": 13.17,
+ "throughput_img_s_b64_fp32": 232.7,
+ "eval_seconds": 47.7,
+ "gpu": "NVIDIA GeForce RTX 4060 Ti"
+}
